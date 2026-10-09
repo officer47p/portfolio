@@ -288,17 +288,17 @@ a:focus-visible,summary:focus-visible {
 .profile-mark {
   width:90px;
   height:90px;
-  display:grid;
-  place-items:center;
   position:relative;
   background:#000080;
   border:2px solid;
   border-color:#98aaff #03034d #03034d #98aaff;
-  color:#fff;
-  font-size:31px;
-  font-weight:900;
-  letter-spacing:-.14em;
   box-shadow:6px 6px 0 #a9a9ae
+}
+.profile-mark img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover
 }
 .profile-mark i {
   position:absolute;
@@ -610,6 +610,61 @@ a:focus-visible,summary:focus-visible {
   letter-spacing:.07em;
   font-weight:700
 }
+.featured-wide-card {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  min-height:270px;
+  padding:0;
+  overflow:hidden
+}
+.featured-preview {
+  position:relative;
+  display:block;
+  min-width:0;
+  min-height:270px;
+  background:#d2d4d2
+}
+.featured-preview img {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+.featured-copy {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:23px
+}
+.featured-copy h3 {
+  margin-top:17px
+}
+.featured-copy h3 a {
+  color:inherit;
+  text-decoration:none
+}
+.featured-copy h3 a:hover {
+  color:#000080;
+  text-decoration:underline;
+  text-underline-offset:3px
+}
+.simulator-card {
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)
+}
+.simulator-card .featured-preview {
+  min-height:350px;
+  background:#f2f2ee
+}
+.simulator-card .featured-preview img {
+  object-fit:contain
+}
+.bittle-card .featured-preview {
+  min-height:310px;
+  background:#0b1727
+}
 .explorer-toolbar {
   display:flex;
   justify-content:space-between;
@@ -862,8 +917,7 @@ a:focus-visible,summary:focus-visible {
   }
   .profile-mark {
     width:68px;
-    height:68px;
-    font-size:24px
+    height:68px
   }
   .profile-details {
     width:100%
@@ -928,7 +982,23 @@ a:focus-visible,summary:focus-visible {
     margin:8px 0 4px
   }
   .featured-grid {
-    grid-template-columns:1fr 1fr
+    grid-template-columns:1fr
+  }
+  .featured-wide-card {
+    grid-template-columns:1fr
+  }
+  .featured-preview {
+    min-height:0;
+    aspect-ratio:16 / 9
+  }
+  .simulator-card .featured-preview {
+    order:-1;
+    min-height:0;
+    aspect-ratio:1280 / 1132
+  }
+  .bittle-card .featured-preview {
+    min-height:0;
+    aspect-ratio:8 / 5
   }
   .footer-bar {
     margin-top:75px
@@ -1052,6 +1122,20 @@ a:focus-visible,summary:focus-visible {
   }
   .featured-card {
     min-height:280px
+  }
+  .featured-wide-card {
+    grid-template-columns:1fr;
+    min-height:0
+  }
+  .featured-preview {
+    min-height:0;
+    aspect-ratio:16 / 9
+  }
+  .simulator-card .featured-preview {
+    aspect-ratio:1280 / 1132
+  }
+  .featured-copy {
+    padding:20px
   }
   .explorer-toolbar {
     display:block

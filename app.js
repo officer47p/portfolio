@@ -99,6 +99,7 @@ const categories = [
   ] },
   { name: 'Robotics and simulation', items: [
     ['6DOF-Simulator', 'Interactive six axis robot arm simulator in Three.js.'],
+    ['bittle-sim', 'Godot 4 quadruped joint simulator with servo controls and pose presets.'],
     ['drivesim', 'Godot vehicle simulator with a telemetry and control bridge.'],
     ['robo-sim', 'Godot robotics simulator with sensors and programmatic control.'],
     ['three-kinematic', 'Three.js kinematics visualization experiment.']
